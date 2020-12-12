@@ -42,8 +42,29 @@ numbers.multiply();
   Ornek : isValidName(" J ohn") false donmeli
 */
 function isValidName(name){
+    if(typeof name ==='string') {
+        var trimName  = name.trim();
+        var divideBySpaces = trimName.split(" ");
+        for (var i =0; i<divideBySpaces .length; i++) {
+          if(divideBySpaces[i].length <= 2 || divideBySpaces[0] == ("") || typeof(name) == "number"){
+              return false;
+          }else {
+              return true;
+          }
+        }
+    }else {
+        return false;
+    }
+  };
+ 
 
-}
+console.log(isValidName("Frank") );
+console.log(isValidName(false) );
+console.log(isValidName(null)  );
+console.log(isValidName(undefined)  );
+console.log(isValidName("") );
+console.log(isValidName("  \t\n") );
+console.log(isValidName("X") );
 
 /*
   Odev 4:
